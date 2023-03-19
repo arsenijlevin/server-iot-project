@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { TemperatureAndHumidityService } from './temperature-and-humidity.service';
+import { TemperatureAndHumidityService } from '../temperature-and-humidity.service';
 
 describe('TemperatureAndHumidityService', () => {
   let service: TemperatureAndHumidityService;

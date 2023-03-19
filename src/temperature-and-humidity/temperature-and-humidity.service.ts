@@ -5,10 +5,12 @@ import { TemperatureAndHumidityDTO } from './dto/post-temperature-and-humidity.d
 export class TemperatureAndHumidityService {
   logTemperatureAndHumidity(
     temperatureAndHumidityDTO: TemperatureAndHumidityDTO,
-  ) {
+  ): TemperatureAndHumidityDTO {
     console.log(`
     Humidity: ${temperatureAndHumidityDTO.humidity}
     Temperature: ${temperatureAndHumidityDTO.temperature}
     -------------------------------`);
+
+    return temperatureAndHumidityDTO;
   }
 }

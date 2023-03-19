@@ -11,8 +11,8 @@ export class TemperatureAndHumidityController {
   @Post('/')
   postTemperatureAndHumidity(
     @Body() temperatureAndHumidityDTO: TemperatureAndHumidityDTO,
-  ) {
-    this.temperatureAndHumidityService.logTemperatureAndHumidity(
+  ): TemperatureAndHumidityDTO {
+    return this.temperatureAndHumidityService.logTemperatureAndHumidity(
       temperatureAndHumidityDTO,
     );
   }
