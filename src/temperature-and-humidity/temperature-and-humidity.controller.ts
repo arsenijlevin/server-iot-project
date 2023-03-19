@@ -1,4 +1,19 @@
-import { Controller } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
+import { TemperatureAndHumidityDTO } from './dto/post-temperature-and-humidity.dto';
+import { TemperatureAndHumidityService } from './temperature-and-humidity.service';
 
 @Controller('temperature-and-humidity')
-export class TemperatureAndHumidityController {}
+export class TemperatureAndHumidityController {
+  constructor(
+    private temperatureAndHumidityService: TemperatureAndHumidityService,
+  ) {}
+
+  @Post('/')
+  postTemperatureAndHumidity(
+    @Body() temperatureAndHumidityDTO: TemperatureAndHumidityDTO,
+  ) {
+    this.temperatureAndHumidityService.logTemperatureAndHumidity(
+      temperatureAndHumidityDTO,
+    );
+  }
+}

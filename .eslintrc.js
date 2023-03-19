@@ -59,14 +59,6 @@ module.exports = {
     'no-unused-vars': 'off',
     'require-jsdoc': 'off',
     'valid-jsdoc': 'off',
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-      },
-    ],
-    'no-console': 'warn',
     'prefer-template': 'off',
     eqeqeq: ['error', 'smart'],
     'max-len': [
