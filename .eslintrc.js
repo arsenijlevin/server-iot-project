@@ -57,6 +57,7 @@ module.exports = {
         format: ['PascalCase'],
       },
     ],
+    "new-cap": 0,
     '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
     '@typescript-eslint/no-var-requires': 'off',
     camelcase: 'off',

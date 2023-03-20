@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { HttpStatus, INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
+import { TemperatureAndHumidityDTO } from '../src/temperature-and-humidity/dto/post-temperature-and-humidity.dto';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -30,12 +31,13 @@ describe('AppController (e2e)', () => {
           humidity: 50,
         };
 
-        const response = await request(app.getHttpServer())
+        const response: request.Response = await request(app.getHttpServer())
           .post('/temperature-and-humidity')
           .send(mockData)
           .expect(HttpStatus.CREATED);
 
-        const { temperature, humidity } = response.body;
+        const { temperature, humidity } =
+          response.body as TemperatureAndHumidityDTO;
 
         expect(temperature).toBe(mockData.temperature);
         expect(humidity).toBe(mockData.humidity);
