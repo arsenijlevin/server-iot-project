@@ -1,0 +1,40 @@
+name: Testing workflow
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm ci
+      - name: Application building
+        run: npm run build
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm ci
+      - name: Code linting
+        run: npm run lint
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm ci
+      - name: Unit testing
+        run: npm run test  
+  test-e2e:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm ci
+      - name: E2E testing
+        run: npm run test:e2e
+
