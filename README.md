@@ -24,6 +24,10 @@ $ npm run start:prod
 ## Test
 
 ```bash
+# swagger location: http://localhost:3000/api
+# available after server startup
+$ npm run start
+
 # unit tests
 $ npm run test
 
@@ -32,4 +36,16 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+```
+
+## API Endpoints
+### Send temperature and humidity to server
+```bash
+$ POST /temperature-and-humidity
+
+# body
+{
+  "temperature": 10,
+  "humidity": 10
+}
 ```
